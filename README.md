@@ -29,10 +29,10 @@ This is a project consisting of a Solidity smart contract called `PropertyTrader
 ##### Executing program
 #### solidity
 
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
 
-contract PropertyTrader {
+    contract PropertyTrader {
     // Enum to represent property types
     enum PropertyType { House, Flat }
 
@@ -94,10 +94,10 @@ contract PropertyTrader {
         require(msg.sender == owner, "Only the owner can perform this action");
         _;
     }
- }
+    }
 
 #### JavaScript
-window.addEventListener('load', async () => {
+    window.addEventListener('load', async () => {
     // Check if MetaMask is installed
     if (typeof window.ethereum !== 'undefined') {
         const web3 = new Web3(window.ethereum);
@@ -329,11 +329,12 @@ window.addEventListener('load', async () => {
         console.log('MetaMask is not installed!');
         document.getElementById('result').innerText = 'Please install MetaMask!';
     }
-});
+    });
 
 
 ###### Author
 Manish Kumar 
 (https://www.linkedin.com/in/manish-kmr/)
- ####### License
- This Cryptotrading is licensed under the MIT License
+
+####### License
+This Cryptotrading is licensed under the MIT License
