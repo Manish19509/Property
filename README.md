@@ -84,17 +84,17 @@ contract PropertyTrader {
     }
 
     // Function to simulate selling a property (currently a placeholder)
-function sellProperty(string memory name) public view {
+    function sellProperty(string memory name) public view {
     require(propertyExists(name), "Property does not exist");
     // Simulate property selling logic (e.g., update ownership records)
-}
+     }
 
     // Modifier to restrict functions to the contract owner
     modifier onlyOwner() {
         require(msg.sender == owner, "Only the owner can perform this action");
         _;
     }
-}
+ }
 
 #### JavaScript
 window.addEventListener('load', async () => {
