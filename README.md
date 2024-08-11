@@ -339,5 +339,5 @@ window.addEventListener('load', async () => {
 Manish Kumar 
 (https://www.linkedin.com/in/manish-kmr/)
 
-####### License
+###### License
 This Cryptotrading is licensed under the MIT License
