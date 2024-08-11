@@ -18,7 +18,6 @@ This is a project consisting of a Solidity smart contract called `PropertyTrader
 
 >> Structs and Mappings:
         1. The property struct stores information about property
->>      2. A mapping called cryptos links the names to their details.
 
 >> Owner Management:
         1. The owner address is set to the contract deployer and is the only entity allowed to add or update properties.
