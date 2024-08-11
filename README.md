@@ -13,8 +13,7 @@ This is the project consisting of a smart contract in Solidity, called PropertyT
 This is a project consisting of a Solidity smart contract called `PropertyTrader` and a frontend JavaScript application that connects with MetaMask through Web3.js. It provides a smart contract for running property management, through which users can create, update, buy, and sell properties on the Ethereum blockchain. On top of this, the JavaScript code provides user interaction through a web interface, thus having nice integration with MetaMask to perform blockchain transactions.
 
 >> Structs and Mappings:
-        1. The property struct stores informationabout property
->>  cryptocurrency.
+        1. The property struct stores information about property
         2. A mapping called cryptos links the names to their details.
 
 >> Owner Management:
@@ -28,11 +27,11 @@ This is a project consisting of a Solidity smart contract called `PropertyTrader
 
 ##### Executing program
 #### solidity
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-    // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.0;
-
-    contract PropertyTrader {
+contract PropertyTrader {
     // Enum to represent property types
     enum PropertyType { House, Flat }
 
@@ -84,20 +83,23 @@ This is a project consisting of a Solidity smart contract called `PropertyTrader
     }
 
     // Function to simulate selling a property (currently a placeholder)
-    function sellProperty(string memory name) public view {
+function sellProperty(string memory name) public view {
     require(propertyExists(name), "Property does not exist");
     // Simulate property selling logic (e.g., update ownership records)
-     }
+}
 
     // Modifier to restrict functions to the contract owner
     modifier onlyOwner() {
         require(msg.sender == owner, "Only the owner can perform this action");
         _;
     }
-    }
-
+}
+```
+            
 #### JavaScript
-    window.addEventListener('load', async () => {
+
+```
+window.addEventListener('load', async () => {
     // Check if MetaMask is installed
     if (typeof window.ethereum !== 'undefined') {
         const web3 = new Web3(window.ethereum);
@@ -329,8 +331,9 @@ This is a project consisting of a Solidity smart contract called `PropertyTrader
         console.log('MetaMask is not installed!');
         document.getElementById('result').innerText = 'Please install MetaMask!';
     }
-    });
+});
 
+```
 
 ###### Author
 Manish Kumar 
