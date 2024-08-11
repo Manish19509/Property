@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Trader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body  style="display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; background-color: #80ffff;">
+  <div class="container" style="max-width: 800px; width: 100%; padding: 20px; background: #2ed0d9; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center;">
+
+    <h1>Property Trader</h1>
+
+    <form id="addPropertyForm" style="background: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 20px; max-width: 760px; width: 100%; text-align: center;">
+      <h2>Add Property</h2>
+      <label for="propertyName" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">Name</label>
+      <input type="text" id="propertyName" required style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+      <label for="propertyType" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">Type</label>
+      <select id="propertyType" style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+        <option value="0">House</option>
+        <option value="1">Flat</option>
+      </select>
+      <br><br>
+      <label for="propertyPrice" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">Price</label>
+      <input type="number" id="propertyPrice" required style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+      <button type="submit" style="padding: 10px 15px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Add Property</button>
+    </form>
+
+    <form id="updatePriceForm" style="background: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 20px; max-width: 760px; width: 100%; text-align: center;">
+      <h2>Update Property Price</h2>
+      <label for="updatePropertyName" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">Property Name</label>
+      <input type="text" id="updatePropertyName" required style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+      <label for="updatePropertyPrice" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">New Price</label>
+      <input type="number" id="updatePropertyPrice" required style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+      <button type="submit" style="padding: 10px 15px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Update Price</button>
+    </form>
+
+    <form id="buyPropertyForm" style="background: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 20px; max-width: 760px; width: 100%; text-align: center;">
+      <h2>Buy Property</h2>
+      <label for="buyPropertyName" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">Property Name</label>
+      <input type="text" id="buyPropertyName" required style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+      <label for="buyAmount" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">Amount</label>
+      <input type="number" id="buyAmount" required style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+      <button type="submit" style="padding: 10px 15px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Buy Property</button>
+    </form>
+
+    <form id="sellPropertyForm" style="background: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 20px; max-width: 760px; width: 100%; text-align: center;">
+      <h2>Sell Property</h2>
+      <label for="sellPropertyName" style="display: inline-block; width: 150px; text-align: center; margin-right: 10px;">Property Name</label>
+      <input type="text" id="sellPropertyName" required style="width: calc(100% - 160px); padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+      <button type="submit" style="padding: 10px 15px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Sell Property</button>
+    </form>
+
+    <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
