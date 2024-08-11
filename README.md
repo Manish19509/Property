@@ -16,7 +16,7 @@ This is the project consisting of a smart contract in Solidity, called PropertyT
 ### Description
 This is a project consisting of a Solidity smart contract called `PropertyTrader` and a frontend JavaScript application that connects with MetaMask through Web3.js. It provides a smart contract for running property management, through which users can create, update, buy, and sell properties on the Ethereum blockchain. On top of this, the JavaScript code provides user interaction through a web interface, thus having nice integration with MetaMask to perform blockchain transactions.
 
->> Structs and Mappings:
+>> Structs:
         1. The property struct stores information about property
 
 >> Owner Management:
