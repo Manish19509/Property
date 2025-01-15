@@ -1,108 +1,48 @@
-# PropertyTrader Smart Contract
-This is the project consisting of a smart contract in Solidity, called PropertyTrader, and a web-based JavaScript script to complement it using the Web3 library to integrate it with MetaMask. In this smart contract, properties can be added, updated, purchased, and sold. The JavaScript code communicates with the Ethereum blockchain for such actions through a web interface.
+# Fraud Detection System### Fraud Detection System:
 
-## Function
->>addProperty : Function to add a new property (only owner).
->>
->>updatePropertyPrice : Function to update the price of a property (only owner).
->>
->>propertyExists: Function to check if a property exists.
->>
->>buyProperty: Function to simulate buying a property.
->>
->>sellProperty: Function to simulate selling a property (currently a placeholder).
+**Fraud Detection System** is a robust solution designed to safeguard financial transactions and enhance user trust. It works by:
 
+- **Fraud Detection**: Identifying suspicious transactions in real-time to proactively address potential risks.
+- **Risk Mitigation**: Preventing financial losses by efficiently blocking fraudulent activities.
+- **Secure Transactions**: Strengthening transaction security to boost user confidence.
+- **Data Analysis**: Leveraging historical data and advanced analytics to improve prediction accuracy.
+- **Compliance Assurance**: Ensuring adherence to regulatory standards for fraud prevention and reporting.
 
-### Description
-This is a project consisting of a Solidity smart contract called `PropertyTrader` and a frontend JavaScript application that connects with MetaMask through Web3.js. It provides a smart contract for running property management, through which users can create, update, buy, and sell properties on the Ethereum blockchain. On top of this, the JavaScript code provides user interaction through a web interface, thus having nice integration with MetaMask to perform blockchain transactions.
+This system serves as a critical tool for businesses to protect their financial assets and maintain operational integrity.
 
->> Structs:
-        1. The property struct stores information about property
+### Description### Fraud Detection System: Project Description  
 
->> Owner Management:
-        1. The owner address is set to the contract deployer and is the only entity allowed to add or update properties.
+The **Fraud Detection System** is a Python-based application designed to detect and prevent fraudulent transactions effectively. This project leverages historical data sourced from Kaggle to develop a robust and efficient detection mechanism.  
 
->> Access Control:
-        The onlyOwner modifier restricts certain functions to be called only by the contract owner.
+#### Key Features:  
+1. **Fraud Detection**: Real-time identification of suspicious activities using machine learning algorithms and data patterns.  
+2. **Risk Mitigation**: Automated systems to minimize financial losses by flagging or blocking potentially fraudulent transactions.  
+3. **Secure Transactions**: Enhances user trust by ensuring the safety and integrity of financial processes.  
+4. **Data Analysis**: Uses Kaggle datasets for training and testing models, employing data preprocessing, feature engineering, and statistical analysis for better predictions.  
+5. **Compliance Assurance**: Aligns with regulatory standards to ensure comprehensive fraud prevention and reporting.
 
+#### Technologies and Techniques:  
+- **Python Libraries**: Pandas, NumPy, Matplotlib, Scikit-learn, and TensorFlow (or PyTorch) for data manipulation, visualization, and model development.  
+- **Machine Learning Models**: Logistic Regression, Random Forest, Gradient Boosting, or Neural Networks for classification tasks.  
+- **Data Handling**: Preprocessing large datasets, handling imbalanced data, and feature scaling.  
+- **Evaluation Metrics**: Precision, Recall, F1 Score, and ROC-AUC to measure model performance.  
 
-#### Getting Started
+This project showcases practical application skills in data science and machine learning, offering a valuable contribution to the financial sector by addressing critical fraud-related challenges.  
 
-##### Executing program
-#### solidity
-```
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+#### Flow Chart
+![image](https://github.com/user-attachments/assets/413ee2ed-f264-457d-85e7-428b327ea2a8)
 
-contract PropertyTrader {
-    // Enum to represent property types
-    enum PropertyType { House, Flat }
+##### Video Explanation 
+https://www.loom.com/share/239d658e200749febecbdd4363758bad?sid=e3a0decb-2d08-4349-96e7-1ae5a18f8fa5
 
-    // Struct to store information about a property
-    struct Property {
-        string name;
-        PropertyType propertyType;
-        uint256 price; // Price in wei
-    }
-
-    // Mapping of property names to their details
-    mapping(string => Property) public properties;
-
-    // Address of the owner (who can update property prices)
-    address public owner;
-
-    // Event emitted when a property price is updated
-    event PropertyPriceUpdated(string name, uint256 price);
-
-    constructor() {
-        owner = msg.sender; // Set the contract deployer as the owner
-    }
-
-    // Function to add a new property (only owner)
-    function addProperty(string memory name, PropertyType propertyType, uint256 price) public onlyOwner {
-        require(!propertyExists(name), "Property already exists");
-        properties[name] = Property(name, propertyType, price);
-    }
-
-    // Function to update the price of a property (only owner)
-    function updatePropertyPrice(string memory name, uint256 price) public onlyOwner {
-        require(propertyExists(name), "Property does not exist");
-        properties[name].price = price;
-        emit PropertyPriceUpdated(name, price);
-    }
-
-    // Function to check if a property exists
-    function propertyExists(string memory name) public view returns (bool) {
-        return bytes(properties[name].name).length > 0;
-    }
-
-    // Function to simulate buying a property
-    function buyProperty(string memory name) public payable {
-        require(propertyExists(name), "Property does not exist");
-        Property storage property = properties[name];
-        uint256 propertyPrice = property.price;
-        require(msg.value >= propertyPrice, "Insufficient funds");
-        // Simulate property purchase logic (e.g., update ownership records)
-    }
-
-    // Function to simulate selling a property (currently a placeholder)
-function sellProperty(string memory name) public view {
-    require(propertyExists(name), "Property does not exist");
-    // Simulate property selling logic (e.g., update ownership records)
-}
-
-    // Modifier to restrict functions to the contract owner
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can perform this action");
-        _;
-    }
-}
-```
-
+#### Output
+![image](https://github.com/user-attachments/assets/d5954e10-4fee-416f-bdc4-f9b7b5d697ee)
+![image](https://github.com/user-attachments/assets/06b512d4-25e0-4fa2-b2e9-0c0e1aaa3148)
+![image](https://github.com/user-attachments/assets/984aaee3-49ba-400e-9849-82cfba3101b1)
+![image](https://github.com/user-attachments/assets/68e90e59-f528-4d10-9a08-408f22b96224)
+![image](https://github.com/user-attachments/assets/8c968107-4b4f-4a7f-b706-dafd5dbdc660)
 
 ###### Author
-Manish Kumar 
+Manish Kumar (22BCS10249)
 (https://www.linkedin.com/in/manish-kmr/)
 
-###### License
-This project is licensed under the MIT License
